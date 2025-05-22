@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/materias_layout_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MateriasActivity">
+
+    <LinearLayout
+        android:id="@+id/materias_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suas Matérias"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- "Card" para Teoria dos Grafos -->
+        <LinearLayout
+            android:id="@+id/boxGrafos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp"> <!-- Adiciona uma leve elevação (API 21+) -->
+
+            <ImageView
+                android:id="@+id/imageGrafos"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/grafos"
+                android:scaleType="centerCrop"
+                android:contentDescription="Imagem representativa de Teoria dos Grafos"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teoria dos Grafos"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore os conceitos fundamentais de grafos, suas aplicações e algoritmos."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- "Card" para Desenvolvimento Mobile -->
+        <LinearLayout
+            android:id="@+id/boxMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/imageMobile"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/mobile"
+                android:scaleType="centerCrop"
+                android:contentDescription="Imagem representativa de Desenvolvimento Mobile"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desenvolvimento Mobile"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aprenda a criar aplicativos incríveis para dispositivos móveis Android."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- "Card" para UX/UI -->
+        <LinearLayout
+            android:id="@+id/boxUxUi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="24dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/imageUxUi"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/uxui"
+                android:scaleType="centerCrop"
+                android:contentDescription="Imagem representativa de UX/UI Design"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UX/UI Design"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descubra os princípios de design de experiência do usuário e interface."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/infoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Mais Informações sobre a Educar"/>
+
+    </LinearLayout>
+</ScrollView>

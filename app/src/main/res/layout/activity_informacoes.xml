@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/informacoes_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/logoImageViewInfo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo_educar"
+        android:contentDescription="Logo da Educar"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre a Educar"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A Educar é uma instituição de ensino dedicada à formação integral de seus alunos, promovendo conhecimento, ética e cidadania. Com foco na excelência acadêmica e no desenvolvimento humano, a Educar se destaca como referência em educação de qualidade, preparando seus estudantes para os desafios do mundo contemporâneo."
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:lineSpacingMultiplier="1.2"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar para Matérias" />
+
+</LinearLayout>
