@@ -10,3 +10,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "PessoaDB", null, 1
         db.execSQL("CREATE TABLE Pessoa(id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome TEXT, idade INTEGER)")
     }
+
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        db.execSQL("DROP TABLE IF EXISTS Pessoa")
+        onCreate(db)
+    }
+}

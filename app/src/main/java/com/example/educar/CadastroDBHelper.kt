@@ -75,7 +75,7 @@ class CadastroDBHelper(context: Context): SQLiteOpenHelper(context, "EducarDB", 
 
     fun excluir(id: Int): Boolean{
         val db = writableDatabase
-        val linhasAfetadas = db.delete("Aluno", "id = ?", arrayOf(toString()))
+        val linhasAfetadas = db.delete("Aluno", "id = ?", arrayOf(id.toString()))
         db.close()
         return linhasAfetadas > 0
     }

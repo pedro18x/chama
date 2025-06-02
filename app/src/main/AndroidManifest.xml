@@ -25,6 +25,9 @@
             android:name=".InformacoesActivity"
             android:exported="false" />
         <activity
+            android:name=".ListarUsuariosActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuActivity"
             android:exported="true">
             <intent-filter>

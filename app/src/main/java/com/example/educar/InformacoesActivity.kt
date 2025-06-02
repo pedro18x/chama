@@ -1,5 +1,6 @@
 package com.example.educar
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class InformacoesActivity : AppCompatActivity() {
 
     private lateinit var voltarButton: Button
+    private lateinit var listarUsuariosInfoButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,10 +25,16 @@ class InformacoesActivity : AppCompatActivity() {
         }
 
         voltarButton = findViewById(R.id.voltarButton)
+        listarUsuariosInfoButton = findViewById(R.id.listarUsuariosInfoButton)
 
 
         voltarButton.setOnClickListener {
             finish()
+        }
+
+        listarUsuariosInfoButton.setOnClickListener {
+            val intent = Intent(this, ListarUsuariosActivity::class.java)
+            startActivity(intent)
         }
     }
 }
