@@ -1,4 +1,4 @@
-package com.example.educar // Certifique-se que este é o nome do seu pacote
+package com.example.educar
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +15,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
+    private lateinit var voltarButton: Button
+
+    private lateinit var dbHelper: CadastroDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,28 +31,38 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        // Inicializa os componentes da UI
         usernameEditText = findViewById(R.id.usernameEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
+        voltarButton = findViewById(R.id.voltarButton)
 
-        // Define a ação do botão de login
         loginButton.setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            // Lógica de autenticação simples (substitua pela sua lógica real)
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // Simula um login bem-sucedido
-                Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
 
-                // Cria um Intent para iniciar a MateriasActivity
-                val intent = Intent(this, MateriasActivity::class.java)
-                startActivity(intent)
-                finish() // Opcional: Finaliza a LoginActivity para que o usuário não volte para ela pressionando "voltar"
+                val usuarioValido = dbHelper.buscarUsuario(username, password)
+
+                if (usuarioValido){
+                    Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this, MateriasActivity::class.java)
+                    startActivity(intent)
+
+                } else{
+                    Toast.makeText(this, "Usuário ou senha inválidos.", Toast.LENGTH_SHORT).show()
+                }
+
             } else {
                 Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        voltarButton.setOnClickListener{
+
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
         }
     }
 }

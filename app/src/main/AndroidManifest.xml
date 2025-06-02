@@ -13,13 +13,19 @@
         android:theme="@style/Theme.Educar"
         tools:targetApi="31">
         <activity
+            android:name=".CadastroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MateriasActivity"
             android:exported="false" />
         <activity
             android:name=".InformacoesActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

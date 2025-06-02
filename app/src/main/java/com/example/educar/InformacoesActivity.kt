@@ -1,4 +1,4 @@
-package com.example.educar // Certifique-se que este é o nome do seu pacote
+package com.example.educar
 
 import android.os.Bundle
 import android.widget.Button
@@ -9,7 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class InformacoesActivity : AppCompatActivity() {
 
-    private lateinit var voltarButton: Button // Declaração do botão
+    private lateinit var voltarButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,21 +22,11 @@ class InformacoesActivity : AppCompatActivity() {
             insets
         }
 
-        // Inicializa o botão
         voltarButton = findViewById(R.id.voltarButton)
 
-        // Define a ação do botão de voltar
-        voltarButton.setOnClickListener {
-            // Maneira 1: Simplesmente finalizar a activity atual
-            // Se a MateriasActivity foi a que chamou InformacoesActivity,
-            // finalizar InformacoesActivity naturalmente retornará para MateriasActivity.
-            finish()
 
-            // Maneira 2: Se você quiser ser explícito ou se a pilha de atividades for complexa (opcional aqui)
-            // val intent = Intent(this, MateriasActivity::class.java)
-            // intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP // Limpa atividades no topo da pilha até MateriasActivity
-            // startActivity(intent)
-            // finish() // Finaliza a InformacoesActivity
+        voltarButton.setOnClickListener {
+            finish()
         }
     }
 }

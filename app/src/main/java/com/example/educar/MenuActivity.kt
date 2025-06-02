@@ -8,25 +8,34 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MateriasActivity : AppCompatActivity() {
+class MenuActivity : AppCompatActivity(){
 
-    private lateinit var infoButton: Button
+    private lateinit var loginButton: Button
+    private lateinit var cadastrarButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_materias)
+        setContentView(R.layout.activity_menu)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.materias_layout)) { v, insets ->
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.menu_layout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        infoButton = findViewById(R.id.infoButton)
+        loginButton = findViewById(R.id.botaoLogar)
+        cadastrarButton = findViewById(R.id.botaoCadrastar)
 
-        infoButton.setOnClickListener {
-            val intent = Intent(this, InformacoesActivity::class.java)
+        loginButton.setOnClickListener{
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        cadastrarButton.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
             startActivity(intent)
         }
     }
