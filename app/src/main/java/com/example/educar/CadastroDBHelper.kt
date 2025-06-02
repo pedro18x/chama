@@ -5,10 +5,14 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+const val TABLE_ALUNO = "Aluno"
+const val COLUMN_NOME_USUARIO = "nome_usuario"
+const val COLUMN_SENHA = "senha"
+
 class CadastroDBHelper(context: Context): SQLiteOpenHelper(context, "EducarDB", null, 1) {
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE $Aluno(" +
+        db.execSQL("CREATE TABLE $TABLE_ALUNO(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " nome_completo TEXT," +
                 " numero_matricula TEXT," +
@@ -28,7 +32,7 @@ class CadastroDBHelper(context: Context): SQLiteOpenHelper(context, "EducarDB", 
             put("nome_completo", nome_completo)
             put("numero_matricula", numero_matricula)
             put("curso", curso)
-            put("mome_usuario", nome_usuario)
+            put("nome_usuario", nome_usuario)
             put("senha", senha)
         }
         return db.insert("Aluno", null, valores) != -1L
@@ -71,7 +75,7 @@ class CadastroDBHelper(context: Context): SQLiteOpenHelper(context, "EducarDB", 
 
     fun excluir(id: Int): Boolean{
         val db = writableDatabase
-        val linhasAfetadas = db.delete("Pessoa", "id = ?", arrayOf(toString()))
+        val linhasAfetadas = db.delete("Aluno", "id = ?", arrayOf(toString()))
         db.close()
         return linhasAfetadas > 0
     }
